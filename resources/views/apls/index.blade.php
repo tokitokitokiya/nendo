@@ -61,7 +61,7 @@
                         <td>{{ $order->item->shop->name }}</td>
                         <td>{{ $order->item->name }}</td>
                         <td>{{ $order->pcs }}</td>
-                        <td class="table_ {{$order->item->shop->id}}">price</td>
+                        <td class="table_{{$order->item->shop->id}}">price</td>
                     </tr>
                 </div>
                 @endforeach
