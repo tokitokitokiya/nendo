@@ -51,7 +51,7 @@ for(let target of targets){
 const pcses = order.map(order => order.pcs);
 const prices = order.map(orderItem => orderItem.item.price);
 
-const price1=
+
 
 /*
 for(let ord of order){
