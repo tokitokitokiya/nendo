@@ -6,7 +6,6 @@ const grade2 = document.getElementsByClassName('grade_2');
 const grade3 = document.getElementsByClassName('grade_3');
 const grade4 = document.getElementsByClassName('grade_4');
 
-console.log(grade2);
 
 for(let target of targets){
     target.addEventListener('change', () => {
@@ -62,6 +61,12 @@ for(let ord of order){
 */
 const sum = order.map(order => order.pcs * order.item.price);
 
+let table = document.getElementsByClassName('table_1');
+let text = table.textContent;
+
+document.getElementsByClassName('table_1').textContent = 'textContentでHTMLを書き換えています';
+
 console.log(pcses);
 console.log(prices);
 console.log(sum);
+console.log(table.innerHTML);

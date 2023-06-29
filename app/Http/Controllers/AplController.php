@@ -47,9 +47,12 @@ class AplController extends Controller
         return redirect('apls/mypage');
     }
     
-    public function items(Item $items)//インポートしたPostをインスタンス化して$postとして使用。
+    public function items()
     {
-        return view('apls/items')->with(['items' => $items]);
+        $item=Item::all();
+        //dd($item);
+        return view('apls/items')->with(['items' => $item]);
+        
     }
     
     public function chumon(Order $order, Request $request){
