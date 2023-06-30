@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\Auth\AuthenticatedSessionController;
 use App\Http\Controllers\ProfileController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\AplController;
@@ -14,14 +15,13 @@ use App\Http\Controllers\AplController;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
 
 
 Route::post('/apls/check', [AplController::class, 'check'])->name('check');
 
-Route::get('/', [AplController::class, 'index'])->name('index');
+Route::get('/', [AplController::class, 'index'])->name('index')->middleware('auth');
+
+Route::get('/index', [AplController::class, 'index'])->name('index');
 
 Route::get('/apls/mypage', [AplController::class, 'mypage'])->name('mypage');
 

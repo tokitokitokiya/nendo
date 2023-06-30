@@ -30,9 +30,9 @@ class AplController extends Controller
 
 
     
-    public function login(Apl $post)//インポートしたPostをインスタンス化して$postとして使用。
+    public function prelogin(User $users)//インポートしたPostをインスタンス化して$postとして使用。
     {
-        return view('apls/login')->with(['food' => $post]);
+        return view('apls/login')->with(['users' => $users]);
     }
     
     public function mypage(Order $order)//インポートしたPostをインスタンス化して$postとして使用。
