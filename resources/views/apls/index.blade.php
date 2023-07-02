@@ -40,7 +40,8 @@
             </div>
             
             
-            <table>
+            <table border="1" id="table1">
+            <colgroup span="6" id="price"></colgroup>
                 <thead>
                     <tr>
                         <th>注文ID</th>
@@ -54,7 +55,6 @@
                 
                 <tbody>
                 @foreach($orders as $order)
-                <div class="order_{{$order->item->shop->id}} grade_{{$order->user->grade}} invisible">
                     <tr class="order_{{$order->item->shop->id}} grade_{{$order->user->grade}}">
                         <td>{{ $order->id }}</td>
                         <td>{{ $order->season }}</td>
@@ -63,7 +63,6 @@
                         <td>{{ $order->pcs }}</td>
                         <td class="table_{{$order->item->shop->id}}">price</td>
                     </tr>
-                </div>
                 @endforeach
                 </tbody>
             </table>

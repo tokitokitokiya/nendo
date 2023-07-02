@@ -64,9 +64,24 @@ const sum = order.map(order => order.pcs * order.item.price);
 let table = document.getElementsByClassName('table_1');
 let text = table.textContent;
 
-document.getElementsByClassName('table_1').textContent = 'textContentでHTMLを書き換えています';
 
-console.log(pcses);
-console.log(prices);
-console.log(sum);
-console.log(table.innerHTML);
+let span6 = document.getElementById("price");
+
+var objTable = document.getElementById("table1");
+console.log(objTable);
+//objTable.rows[2].cells[3].innerHTML = sum[2]; //これはOK
+
+
+for (let i = 0; i < sum.length; i++){
+    objTable.rows[i+1].cells[5].innerHTML = sum[i];
+}
+
+
+console.log(pcses,prices,sum);
+
+
+
+console.log(span6);
+
+
+
