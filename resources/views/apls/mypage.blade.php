@@ -29,7 +29,7 @@
     <tbody>
         @foreach($userorders as $order)
         <div>
-            <tr class="order_{{$order->item->shop->id}} grade_{{$order->user->grade}}">
+            <tr>
                 <td>{{ $order->user->grade }}</td>
                 <td>{{ $order->season }}</td>
                 <td>{{ $order->item->shop->name }}</td>
