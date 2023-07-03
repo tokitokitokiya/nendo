@@ -23,12 +23,9 @@ class AplController extends Controller
         $order3 = Order::whereHas('item',function($q){
             $q->where('shop_id',3);
             })->get();
-        
-
+            
         //$orders=Order::whereIn('item_id', $item->pluck('id') )->get();
         
-        
-     
         return view('apls/index')->with(['shops' => $shops,'orders'=>$order->get(),'orders1' => $order1,'orders2' => $order2,'orders3' => $order3]);
     }
 

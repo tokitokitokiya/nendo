@@ -46,7 +46,7 @@ for(let target of targets){
     
 }
 
-
+/*表の値段を返す処理*/
 const pcses1 = order1.map(order => order.pcs);
 const prices1 = order1.map(orderItem => orderItem.item.price);
 const sum1 = order1.map(order => order.pcs * order.item.price);
@@ -78,7 +78,15 @@ for (let i = 0; i < sum3.length; i++){
     objTable3.rows[i+1].cells[5].innerHTML = sum3[i];
 }
 
-console.log(pcses1,prices1,sum1);
 
+/*値段の合計*/
 
-
+/*表示する注文期間の指定*/
+function filter(){
+    var year = document.getElementById('sY').value;
+    var month = document.getElementById('sM').value;
+    var day = document.getElementById('sD').value;
+    var year = document.getElementById('uY').value;
+    var month = document.getElementById('uM').value;
+    var day = document.getElementById('uD').value;
+}

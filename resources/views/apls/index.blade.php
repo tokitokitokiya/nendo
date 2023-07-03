@@ -19,13 +19,6 @@
             <h1>注文一覧</h1>
             <!-- チェックボックス -->
             <div>
-            @foreach($shops as $shop)
-                <label>
-                    <input class="shop" type="checkbox" name="shops[]" value="{{ $shop->id }}" checked>
-                    {{ $shop->name }}
-                </label>
-            @endforeach
-            </div>
             <div>
                 <label>
                     <input class="grade" type="checkbox" name="grade" value="1" checked>1年
@@ -38,6 +31,17 @@
                 </label>
                     <input class="grade" type="checkbox" name="grade" value="4" checked>4年</label>
             </div>
+            
+                @csrf
+                <input type="number" id="sY" placeholder="<?php echo date('Y');?>"> 
+                <input type="number" id="sM" min="1" max="12" placeholder="<?php echo date('m');?>">
+                <input type="number" id="sD" placeholder="01">
+                <p>から</p>
+                <input type="number" id="uY" placeholder="<?php echo date('Y');?>"> 
+                <input type="number" id="uM" min="1" max="12" placeholder="<?php echo date('m');?>">
+                <input type="number" id="uD" placeholder="<?php echo date('j');?>">
+                <button onclick="filter()">期間を絞る</button>
+            
             
             
             <table border="1" id="table1">
@@ -112,7 +116,7 @@
                 
                 <tbody>
                 @foreach($orders3 as $order)
-                    <tr class="order_{{$order->item->shop->id}} grade_{{$order->user->grade}}">
+                    <tr class="grade_{{$order->user->grade}}" value="{{ $order->season }}">
                         <td>{{ $order->user->name }}</td>
                         <td>{{ $order->season }}</td>
                         <td>{{ $order->item->shop->name }}</td>
