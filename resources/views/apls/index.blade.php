@@ -41,10 +41,11 @@
             
             
             <table border="1" id="table1">
-            <colgroup span="6" id="price"></colgroup>
+                <caption>かね利</caption>
+            <colgroup span="6" id="price1"></colgroup>
                 <thead>
                     <tr>
-                        <th>注文ID</th>
+                        <th>名前</th>
                         <th>シーズン</th>
                         <th>製造企業</th>
                         <th>商品名</th>
@@ -54,9 +55,9 @@
                 </thead>
                 
                 <tbody>
-                @foreach($orders as $order)
+                @foreach($orders1 as $order)
                     <tr class="order_{{$order->item->shop->id}} grade_{{$order->user->grade}}">
-                        <td>{{ $order->id }}</td>
+                        <td>{{ $order->user->name }}</td>
                         <td>{{ $order->season }}</td>
                         <td>{{ $order->item->shop->name }}</td>
                         <td>{{ $order->item->name }}</td>
@@ -67,8 +68,74 @@
                 </tbody>
             </table>
             
+            <table border="1" id="table2">
+                <caption>浅岡</caption>
+            <colgroup span="6" id="price2"></colgroup>
+                <thead>
+                    <tr>
+                        <th>名前</th>
+                        <th>シーズン</th>
+                        <th>製造企業</th>
+                        <th>商品名</th>
+                        <th>数量</th>
+                        <th>値段</th>
+                    </tr>
+                </thead>
+                
+                <tbody>
+                @foreach($orders2 as $order)
+                    <tr class="order_{{$order->item->shop->id}} grade_{{$order->user->grade}}">
+                        <td>{{ $order->user->name }}</td>
+                        <td>{{ $order->season }}</td>
+                        <td>{{ $order->item->shop->name }}</td>
+                        <td>{{ $order->item->name }}</td>
+                        <td>{{ $order->pcs }}</td>
+                        <td class="table_{{$order->item->shop->id}}">price</td>
+                    </tr>
+                @endforeach
+                </tbody>
+            </table>
+            
+            <table border="1" id="table3">
+                <caption>丸石</caption>
+            <colgroup span="6" id="price3"></colgroup>
+                <thead>
+                    <tr>
+                        <th>名前</th>
+                        <th>シーズン</th>
+                        <th>製造企業</th>
+                        <th>商品名</th>
+                        <th>数量</th>
+                        <th>値段</th>
+                    </tr>
+                </thead>
+                
+                <tbody>
+                @foreach($orders3 as $order)
+                    <tr class="order_{{$order->item->shop->id}} grade_{{$order->user->grade}}">
+                        <td>{{ $order->user->name }}</td>
+                        <td>{{ $order->season }}</td>
+                        <td>{{ $order->item->shop->name }}</td>
+                        <td>{{ $order->item->name }}</td>
+                        <td>{{ $order->pcs }}</td>
+                        <td class="table_{{$order->item->shop->id}}">price</td>
+                    </tr>
+                @endforeach
+                </tbody>
+            </table>
+            
+            
+            
+            
+            
+            
+            
+            
+            
             <script>
-                const order = @json($orders);
+                const order1 = @json($orders1);
+                const order2 = @json($orders2);
+                const order3 = @json($orders3);
             </script>
             <script src="{{ asset('js/shop.js') }}"></script>
 

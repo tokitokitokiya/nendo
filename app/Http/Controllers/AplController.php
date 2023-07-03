@@ -14,14 +14,22 @@ class AplController extends Controller
     public function index(Order $order, Request $request)//インポートしたPostをインスタンス化して$postとして使用。
     {
         $shops=Shop::all();
-        $item = Item::where('shop_id',$request->input('shops') ?? [1])->get();
+        $order1 = Order::whereHas('item',function($q){
+            $q->where('shop_id',1);
+            })->get();
+        $order2 =Order::whereHas('item',function($q){
+            $q->where('shop_id',2);
+            })->get();
+        $order3 = Order::whereHas('item',function($q){
+            $q->where('shop_id',3);
+            })->get();
         
 
         //$orders=Order::whereIn('item_id', $item->pluck('id') )->get();
         
         
      
-        return view('apls/index')->with(['shops' => $shops,'orders'=>$order->get()]);
+        return view('apls/index')->with(['shops' => $shops,'orders'=>$order->get(),'orders1' => $order1,'orders2' => $order2,'orders3' => $order3]);
     }
 
 

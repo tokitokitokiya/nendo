@@ -47,41 +47,38 @@ for(let target of targets){
 }
 
 
-const pcses = order.map(order => order.pcs);
-const prices = order.map(orderItem => orderItem.item.price);
+const pcses1 = order1.map(order => order.pcs);
+const prices1 = order1.map(orderItem => orderItem.item.price);
+const sum1 = order1.map(order => order.pcs * order.item.price);
 
+const pcses2 = order2.map(order => order.pcs);
+const prices2 = order2.map(orderItem => orderItem.item.price);
+const sum2 = order2.map(order => order.pcs * order.item.price);
 
+const pcses3 = order3.map(order => order.pcs);
+const prices3 = order3.map(orderItem => orderItem.item.price);
+const sum3 = order3.map(order => order.pcs * order.item.price);
 
-/*
-for(let ord of order){
-    let pic = ord.pcs;
-    
-    pis = pis+pic;
-}
-*/
-const sum = order.map(order => order.pcs * order.item.price);
-
-let table = document.getElementsByClassName('table_1');
-let text = table.textContent;
-
-
-let span6 = document.getElementById("price");
-
-var objTable = document.getElementById("table1");
-console.log(objTable);
-//objTable.rows[2].cells[3].innerHTML = sum[2]; //これはOK
-
-
-for (let i = 0; i < sum.length; i++){
-    objTable.rows[i+1].cells[5].innerHTML = sum[i];
+//let table1 = document.getElementsByClassName('table_1');
+let span_1 = document.getElementById("price1");
+var objTable1 = document.getElementById("table1");
+for (let i = 0; i < sum1.length; i++){
+    objTable1.rows[i+1].cells[5].innerHTML = sum1[i];
 }
 
+let span_2 = document.getElementById("price2");
+var objTable2 = document.getElementById("table2");
+for (let i = 0; i < sum2.length; i++){
+    objTable2.rows[i+1].cells[5].innerHTML = sum2[i];
+}
 
-console.log(pcses,prices,sum);
+let span_3 = document.getElementById("price3");
+var objTable3 = document.getElementById("table3");
+for (let i = 0; i < sum3.length; i++){
+    objTable3.rows[i+1].cells[5].innerHTML = sum3[i];
+}
 
-
-
-console.log(span6);
+console.log(pcses1,prices1,sum1);
 
 
 
