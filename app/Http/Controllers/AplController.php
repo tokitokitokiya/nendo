@@ -15,14 +15,13 @@ class AplController extends Controller
     {
         $shops=Shop::all();
         $item = Item::where('shop_id',$request->input('shops') ?? [1])->get();
-        $user= $order->find(1)->user->get();
         
 
         //$orders=Order::whereIn('item_id', $item->pluck('id') )->get();
         
         
      
-        return view('apls/index')->with(['shops' => $shops,'orders'=>$order->get(),'user'=>$user]);
+        return view('apls/index')->with(['shops' => $shops,'orders'=>$order->get()]);
     }
 
 
@@ -50,8 +49,11 @@ class AplController extends Controller
     public function items()
     {
         $item=Item::all();
+        $item1=Item::where('shop_id',1)->get();
+        $item2=Item::where('shop_id',2)->get();
+        $item3=Item::where('shop_id',3)->get();
         //dd($item);
-        return view('apls/items')->with(['items' => $item]);
+        return view('apls/items')->with(['items1' => $item1,'items2' => $item2,'items3' => $item3]);
         
     }
     

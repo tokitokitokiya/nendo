@@ -12,6 +12,7 @@
 
 
     <table>
+        <caption>かね利</caption>
         <thead>
             <tr>
                 <th>商品ID</th>
@@ -21,15 +22,83 @@
             </tr>
         </thead>
     <tbody>
-        @foreach($items as $item)
-        <div>
+        @foreach($items1 as $item)
+        <tr>
+            <td>{{ $item->id }}</td>
+            <td>{{ $item->shop->name }}</td>
+            <td>{{ $item->name }}</td>
+            <td>{{ $item->price }}</td>
+        </tr>
+        
+        @endforeach
+    </tbody>
+    </table>
+    
+    <table>
+        <caption>浅岡</caption>
+        <thead>
             <tr>
-                <td>{{ $item->id }}</td>
-                <td>{{ $item->shop->name }}</td>
-                <td>{{ $item->name }}</td>
-                <td>{{ $item->price }}</td>
+                <th>商品ID</th>
+                <th>企業名</th>
+                <th>商品名</th>
+                <th>値段</th>
             </tr>
-        </div>
+        </thead>
+    <tbody>
+        @foreach($items2 as $item)
+        <tr>
+            <td>{{ $item->id }}</td>
+            <td>{{ $item->shop->name }}</td>
+            <td>{{ $item->name }}</td>
+            <td>{{ $item->price }}</td>
+        </tr>
+        
+        @endforeach
+    </tbody>
+    </table>
+    
+    <table>
+        <caption>浅岡</caption>
+        <thead>
+            <tr>
+                <th>商品ID</th>
+                <th>企業名</th>
+                <th>商品名</th>
+                <th>値段</th>
+            </tr>
+        </thead>
+    <tbody>
+        @foreach($items2 as $item)
+        <tr>
+            <td>{{ $item->id }}</td>
+            <td>{{ $item->shop->name }}</td>
+            <td>{{ $item->name }}</td>
+            <td>{{ $item->price }}</td>
+        </tr>
+        
+        @endforeach
+    </tbody>
+    </table>
+    
+    <table>
+        <caption>丸石</caption>
+        <thead>
+            <tr>
+                <th>商品ID</th>
+                <th>企業名</th>
+                <th>商品名</th>
+                <th>値段</th>
+            </tr>
+        </thead>
+    <tbody>
+        @foreach($items3 as $item)
+        <tr>
+            <td>{{ $item->id }}</td>
+            <td>{{ $item->shop->name }}</td>
+            <td>{{ $item->name }}</td>
+            <td>{{ $item->price }}</td>
+        </tr>
+        
         @endforeach
     </tbody>
     </table>
