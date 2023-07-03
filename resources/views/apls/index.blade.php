@@ -32,7 +32,7 @@
                     <input class="grade" type="checkbox" name="grade" value="4" checked>4年</label>
             </div>
             
-                @csrf
+               
                 <input type="number" id="sY" placeholder="<?php echo date('Y');?>"> 
                 <input type="number" id="sM" min="1" max="12" placeholder="<?php echo date('m');?>">
                 <input type="number" id="sD" placeholder="01">
@@ -60,7 +60,7 @@
                 
                 <tbody>
                 @foreach($orders1 as $order)
-                    <tr class="order_{{$order->item->shop->id}} grade_{{$order->user->grade}}">
+                    <tr class="gyou order_{{$order->item->shop->id}} grade_{{$order->user->grade}}">
                         <td>{{ $order->user->name }}</td>
                         <td>{{ $order->season }}</td>
                         <td>{{ $order->item->shop->name }}</td>
@@ -88,7 +88,7 @@
                 
                 <tbody>
                 @foreach($orders2 as $order)
-                    <tr class="order_{{$order->item->shop->id}} grade_{{$order->user->grade}}">
+                    <tr class="gyou order_{{$order->item->shop->id}} grade_{{$order->user->grade}}">
                         <td>{{ $order->user->name }}</td>
                         <td>{{ $order->season }}</td>
                         <td>{{ $order->item->shop->name }}</td>
